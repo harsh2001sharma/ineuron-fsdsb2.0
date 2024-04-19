@@ -1,0 +1,126 @@
+1. What exactly is []?
+Ans.
+It represents an empty list, a collection of ordered items that can be of different data types and is used to create lists by enclosing comma-separated values within square brackets.
+
+2. In a list of values stored in a variable called spam, how would you assign the value 'hello' as the third value? (Assume [2, 4, 6, 8, 10] are in spam.)
+Let's pretend the spam includes the list ['a', 'b', 'c', 'd'] for the next three queries.
+Ans.
+spam = spam[:2] + ['hello'] + spam[2:]  # Slicing and concatenation
+
+3. What is the value of spam[int(int('3' * 2) / 11)]?
+Ans.
+'3' * 2: String repetition, resulting in "33".
+int('33'): Converts the string "33" to the integer 33.
+int(33 / 11): Integer division, resulting in 3 (truncates the decimal part).
+spam[3]: Accesses the element at index 3 (assuming zero-based indexing), which is 'd'.
+Therefore, the value is 'd'.
+
+4. What is the value of spam[-1]?
+Ans.
+spam[-1]: Accesses the last element using negative indexing. In this case, it's 'd'.
+
+5. What is the value of spam[:2]?
+Let's pretend bacon has the list [3.14, 'cat,' 11, 'cat,' True] for the next three questions.
+Ans.
+spam[:2]: Slices the list from the beginning (index 0) up to, but not including, index 2.
+This results in ['a', 'b'].
+
+6. What is the value of bacon.index('cat')?
+Ans.
+bacon.index('cat'): Finds the first occurrence of the value 'cat' in the bacon list.
+Returns the index, which is 1.
+
+7. How does bacon.append(99) change the look of the list value in bacon?
+Ans.
+.append(99) adds the value 99 to the end of the bacon list.
+The modified list becomes: [3.14, 'cat', 11, 'cat', True, 99].
+
+8. How does bacon.remove('cat') change the look of the list in bacon?
+Ans.
+.remove('cat') removes the first occurrence of the value 'cat' from the bacon list.
+If 'cat' appears multiple times, only the first one is removed.
+The modified list becomes: [3.14, 11, 'cat', True, 99].
+
+9. What are the list concatenation and list replication operators?
+Ans.
+Concatenation (+): Combines two or more lists into a new list.
+[1, 2, 3] + [4, 5, 6]: Creates [1, 2, 3, 4, 5, 6].
+Replication (*): Creates a new list by repeating an existing list a certain number of times.
+[1, 2] * 3: Creates [1, 2, 1, 2, 1, 2].
+
+10. What is difference between the list methods append() and insert()?
+Ans.
+.append(value): Adds the specified value to the end of the list.
+.insert(index, value): Inserts the specified value at a particular index in the list, shifting elements to the right.
+
+11. What are the two methods for removing items from a list?
+Ans.
+.remove(value): Removes the first occurrence of the specified value from the list. Raises a ValueError if the value is not found.
+.pop(index): Removes and returns the element at the given index (defaults to the last element if no index is specified).
+
+12. Describe how list values and string values are identical.
+Ans.
+Both are ordered sequences of elements.
+Both can be indexed using integer positions (zero-based indexing
+
+13. What's the difference between tuples and lists?
+Ans.
+Both tuples and lists are used to store collections of items in Python, but they differ in their mutability (changeability):
+
+Lists (mutable): Elements can be added, removed, or modified after creation.
+-Mutable
+-Elements can be added/removed/modified
+-[] (square brackets)
+-Working with dynamic data
+
+Tuples (immutable): Elements cannot be changed after creation.
+-Immutable
+-Elements cannot be added/removed/modified
+-() (parentheses)
+-Representing fixed data
+
+14. How do you type a tuple value that only contains the integer 42?
+Ans.
+my_tuple = (42,)  # The comma after 42 is necessary to distinguish it from a parenthesized expression
+
+15. How do you get a list value's tuple form? How do you get a tuple value's list form?
+Ans.
+List to Tuple: Use tuple(list_name).
+Tuple to List: Use list(tuple_name).
+Example:
+my_list = [1, 2, 3]
+my_tuple = tuple(my_list)
+
+my_tuple = (4, 5, 6)
+my_list = list(my_tuple)
+
+16. Variables that "contain" list values are not necessarily lists themselves. Instead, what do they contain?
+Ans.
+Variables in Python store references to objects in memory, not the objects themselves.
+When you assign a list or tuple to a variable, the variable holds a memory address pointing to the actual list/tuple object.
+Example:
+my_list = [1, 2, 3]
+another_list = my_list  # another_list now refers to the same list object in memory
+
+my_list.append(4)  # Modifying my_list also affects another_list because they point to the same object
+
+# To create a copy of the list, we can use list(my_list) or copy.copy(my_list)
+
+17. How do you distinguish between copy.copy() and copy.deepcopy()?
+Ans.
+copy.copy(): Creates a shallow copy. It copies the top-level structure of the object, but references to mutable sub-objects (like lists within lists) are copied, not the sub-objects themselves. Modifying a sub-object in the copy will also affect the original. We use copy.copy() for simple objects or when modifying sub-objects in the copy is intended behavior.
+copy.deepcopy(): Creates a deep copy. It copies the entire object structure recursively, including mutable sub-objects. Modifications to sub-objects in the copy won't affect the original. We use copy.deepcopy() when working with complex objects and you want to ensure complete independence between the original and the copy.
+Example:
+import copy
+
+original_list = [[1, 2], [3, 4]]
+
+shallow_copy = copy.copy(original_list)
+deep_copy = copy.deepcopy(original_list)
+
+shallow_copy[0].append(5)  # Modifies the sub-list in both original and shallow copy
+deep_copy[1].append(6)  # Only modifies the sub-list in the deep copy
+
+print(original_list)  # Output: [[1, 2, 5], [3, 4]]
+print(shallow_copy)   # Output: [[1, 2, 5], [3, 4]]
+print(deep_copy)    # Output: [[1, 2], [3, 4, 6]]
