@@ -1,0 +1,88 @@
+1. Why are functions advantageous to have in your programs?
+Ans.
+Advantages of Functions:
+Code Reusability: You can write a function once and call it multiple times throughout your program, reducing redundancy.
+Modularity: Functions break down complex programs into smaller, manageable units, improving code organization and readability.
+Maintainability: Changes to a function's logic are isolated, making maintenance easier.
+Testing: Functions can be tested independently, ensuring their correctness.
+
+2. When does the code in a function run: when it's specified or when it's called?
+Ans.
+Function Definition: The code that defines the function's behavior is executed only once when the program encounters the def statement.
+Function Call: The code within a function executes when the function is called. Each call creates a new execution environment.
+
+3. What statement creates a function?
+Ans.
+The def statement is used to define a function. It has the following general syntax:
+def function_name(parameters):
+    # Function body (code to be executed)
+
+4. What is the difference between a function and a function call?
+Ans.
+Function: The blueprint for a set of instructions with a name.
+Function Call: The act of invoking the function's code by using its name along with any necessary arguments.
+
+5. How many global scopes are there in a Python program? How many local scopes?
+Ans.
+Global Scope: Exists throughout the entire program. A variable declared outside any function is global. There's typically only one global scope per Python program.
+Local Scope: Exists within a function. A variable declared inside a function is local to that function. There can be multiple local scopes (one for each function call).
+
+6. What happens to variables in a local scope when the function call returns?
+Ans.
+Local variables are destroyed when the function call completes. They are no longer accessible unless the function is called again.
+
+7. What is the concept of a return value? Is it possible to have a return value in an expression?
+Ans.
+A function can optionally return a value using the return statement. This value is sent back to the caller and can be assigned to a variable or used in an expression.
+Expressions cannot have explicit return values on their own, but they can evaluate to a value that can be returned by a function.
+
+8. If a function does not have a return statement, what is the return value of a call to that function?
+Ans.
+If a function doesn't have a return statement, it implicitly returns None. None is a special data type indicating the absence of a meaningful value.
+
+9. How do you make a function variable refer to the global variable?
+Ans.
+To use a global variable inside a function, you need to declare it as global within the function:
+x = 10  # Global variable
+
+def my_function():
+    global x
+    x += 5  # Modifying the global variable
+
+my_function()
+print(x)  # Output: 15 (global x is modified)
+
+10. What is the data type of None?
+Ans.
+None is a special data type that signifies the absence of a value. It's considered a singleton object, meaning there's only one instance of None in Python.
+
+11. What does the sentence import areallyourpetsnamederic do?
+Ans.
+This statement attempts to import a module named areallyourpetsnamederic. If such a module doesn't exist, Python will raise an ImportError. You should replace it with the actual name of the module you want to import.
+
+12. If you had a bacon() feature in a spam module, what would you call it after importing spam?
+Ans.
+spam.bacon()
+
+13. What can you do to save a programme from crashing if it encounters an error?
+Ans.
+try clause: Wraps the code that might raise an exception (error).
+except clause: Contains code to handle the exception if it occurs.
+
+try:
+    # Code that might raise an exception
+except ExceptionType:
+    # Code to handle the exception
+
+14. What is the purpose of the try clause? What is the purpose of the except clause?
+Ans.
+try clause: Encloses the code that you suspect might raise an exception.
+except clause(s): One or more except clauses are used to handle specific exceptions or a broader category of exceptions using base class exceptions like Exception. Each except clause can optionally include a variable name to store the exception object for further processing.
+Example:
+
+try:
+    result = 10 / 0  # This will raise a ZeroDivisionError
+except ZeroDivisionError:
+    print("Division by zero is not allowed!")
+else:
+    print(result)  # This won't execute because the try block raised an exception
