@@ -1,0 +1,130 @@
+1.What are the two values of the Boolean data type? How do you write them?
+Ans.
+There are two Boolean values:
+True: Represents truth or "on."
+False: Represents falsity or "off."
+
+2. What are the three different types of Boolean operators?
+Ans.
+There are three Boolean operators:
+and: Returns True if both operands are True, otherwise returns False.
+or: Returns True if at least one operand is True, otherwise returns False.
+not (unary operator): Flips the value of a single operand (e.g., not True is False).
+
+3. Make a list of each Boolean operator's truth tables (i.e. every possible combination of Boolean
+values for the operator and what it evaluate ).
+Ans.
+AND Operator:
+True AND True = True
+True AND False = False
+False AND True = False
+False AND False = False
+
+OR Operator:
+True OR True = True
+True OR False = True
+False OR True = True
+False OR False = False
+
+NOT Operator:
+NOT True = False
+NOT False = True
+
+4. What are the values of the following expressions?
+(5 > 4) and (3 == 5)
+not (5 > 4)
+(5 > 4) or (3 == 5)
+not ((5 > 4) or (3 == 5))
+(True and True) and (True == False)
+(not False) or (not True)
+Ans.
+(5 > 4) and (3 == 5): False (5 is greater than 4 is True, but 3 is not equal to 5)
+not (5 > 4): False (5 is greater than 4 is True, negating it makes it False)
+(5 > 4) or (3 == 5): True (at least one condition is True)
+not ((5 > 4) or (3 == 5)): False (the inner expression is True, negating it makes it False)
+(True and True) and (True == False): False (the second condition is False)
+(not False) or (not True): True (both negations are True, so at least one is True)
+
+5. What are the six comparison operators?
+Ans.
+==: Equal to
+!=: Not equal to
+>: Greater than
+<: Less than
+>=: Greater than or equal to
+<=: Less than or equal to
+
+6. How do you tell the difference between the equal to and assignment operators?Describe a
+condition and when you would use one.
+Ans.
+== checks for equality and returns a Boolean value (True or False).
+= assigns a value to a variable.
+
+7. Identify the three blocks in this code:
+spam = 0
+if spam == 10:
+print('eggs')
+if spam > 5:
+print('bacon')
+else:
+print('ham')
+print('spam')
+print('spam')
+Ans.
+spam = 0  
+if spam == 10:  # Block 1: Indented under the if statement
+    print('eggs')  # Inside Block 1
+if spam > 5:  # Block 2: Indented under the if statement
+    print('bacon')  # Inside Block 2
+else:  # Inside Block 3, else statement
+    print('ham')  # Inside Block 3
+print('spam')  
+print('spam')
+
+
+8. Write code that prints Hello if 1 is stored in spam, prints Howdy if 2 is stored in spam, and prints
+Greetings! if anything else is stored in spam.
+Ans.
+
+spam = int(input("Enter a number: "))  # Get input from user and convert to integer
+if spam == 1:
+    print("Hello")
+elif spam == 2:
+    print("Howdy")
+else:
+    print("Greetings!")
+
+9.If your programme is stuck in an endless loop, what keys you’ll press?
+Ans.
+Windows/Linux: Press Ctrl + C simultaneously.
+Mac: Press Command + Option + Esc simultaneously.
+
+10. How can you tell the difference between break and continue?
+Ans.
+break: Exits the entire loop immediately.
+continue: Skips to the next iteration of the loop.
+
+11. In a for loop, what is the difference between range(10), range(0, 10), and range(0, 10, 1)?
+Ans.
+range(10): Generates numbers from 0 to 9 (exclusive of 10).
+range(0, 10): Same as range(10).
+range(0, 10, 1): Explicitly specifies a step of 1 (default anyway).
+
+12. Write a short program that prints the numbers 1 to 10 using a for loop. Then write an equivalent
+program that prints the numbers 1 to 10 using a while loop.
+Ans.
+# Using a for loop
+for i in range(1, 11):
+    print(i)
+# Using a while loop
+i = 1
+while i <= 10:
+    print(i)
+    i += 1
+
+13. If you had a function named bacon() inside a module named spam, how would you call it after
+importing spam?
+Ans.
+After importing the spam module, we will call the bacon() function using dot notation. 
+import spam
+spam.bacon()
