@@ -1,0 +1,81 @@
+1. What are escape characters, and how do you use them?
+Ans.
+Escape characters are used to modify the interpretation of special characters within strings.
+They begin with a backslash (\) followed by another character.
+Example:
+print("This is a newline\nThis is a tab\tThis is a backslash: \\")
+Output:
+This is a newline
+This is a tab    This is a backslash: \
+
+2. What do the escape characters n and t stand for?
+Ans.
+\n: Newline (creates a new line)
+\t: Horizontal tab (inserts whitespace)
+
+3. What is the way to include backslash characters in a string?
+Ans.
+To include a literal backslash in a string, use \\:
+my_string = "This is a path: \\Users\\alice"
+
+4. The string "Howl's Moving Castle" is a correct value. Why isn't the single quote character in the word Howl's not escaped a problem?
+Ans.
+Since the string is enclosed in double quotes, the single quote within "Howl's" is treated as a literal character and doesn't require escaping.
+
+5. How do you write a string of newlines if you don't want to use the n character?
+Ans.
+There are two ways:
+-Triple-quoted strings: Use triple quotes (either ''' or """) to create multiline strings without the need for escape characters:
+my_string = """This is a string
+with multiple lines"""
+
+-Concatenation with newline characters: You can concatenate strings with newline characters ('\n') directly:
+my_string = "Line 1\nLine 2"
+
+6. What are the values of the given expressions?
+'Hello, world!'[1]
+'Hello, world!'[0:5]
+'Hello, world!'[:5]
+'Hello, world!'[3:]
+Ans.
+'Hello, world!'[1]: Evaluates to "e", the character at index 1 (zero-based indexing).
+'Hello, world!'[0:5]: Slices the string from index 0 (inclusive) to index 5 (exclusive), resulting in "Hello".
+'Hello, world!'[:5]: Same as the previous example, [:n] defaults to the beginning of the string.
+'Hello, world!'[3:]: Slices from index 3 (inclusive) to the end, resulting in "lo, world!".
+
+7. What are the values of the following expressions?
+'Hello'.upper()
+'Hello'.upper().isupper()
+'Hello'.upper().lower()
+Ans.
+'Hello'.upper(): Converts all characters to uppercase, resulting in "HELLO".
+'HELLO'.isupper(): Checks if all characters are uppercase (True in this case).
+'HELLO'.lower(): Converts all characters to lowercase, resulting in "hello".
+
+8. What are the values of the following expressions?
+'Remember, remember, the fifth of July.'.split()
+'-'.join('There can only one.'.split())
+Ans.
+'Remember, remember, the fifth of July.'.split(): Splits the string into a list of words, resulting in ["Remember,", "remember,", "the", "fifth", "of", "July."].
+'-'.join('There can only one.'.split()): Joins the words in the list with '-' as a separator, resulting in "There-can-only-one.".
+
+9. What are the methods for right-justifying, left-justifying, and centering a string?
+Ans.
+rjust(width, fillchar): Right-justifies the string within a specified width, padding with a fill character (default is space):
+my_string = "left"
+justified = my_string.rjust(10, '*')  # Output: "****left**"
+ljust(width, fillchar): Left-justifies the string within a specified width, padding with a fill character:
+my_string = "right"
+justified = my_string.ljust(10, '$')  # Output: "right$$$$$$"
+center(width, fillchar): Centers the string within a specified width, padding with a fill character:
+my_string = "center"
+justified = my_string.center(10, '-')  # Output: "--center--"
+
+10. What is the best way to remove whitespace characters from the start or end?
+Ans.
+strip(): Removes leading and trailing whitespace characters (spaces, tabs, newlines):
+my_string = " \t  hello, world!  \n"
+stripped = my_string.strip()  # Output: "hello, world!"
+
+lstrip(): Removes leading whitespace characters.
+rstrip(): Removes trailing whitespace characters.
